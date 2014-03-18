@@ -7,7 +7,7 @@ Pod::Spec.new do |s|
   s.authors           = 'David Bainbridge', 'Vadim Shpakovski'
   s.source           = { :git => "https://github.com/dbainbridge/DBStatusBar.git", :tag => s.version.to_s }
 
-  s.platform     = :osx, '10.9'
+  s.platform     = :osx, '10.7'
   s.requires_arc = true
 
   s.source_files = 'DBStatusBar'
