@@ -77,22 +77,21 @@
 
 - (void)windowDidBecomeKey:(NSNotification *)notification
 {
-    NSLog(@"became key");
 }
 
 - (void)windowDidResignKey:(NSNotification *)notification;
 {
-    NSLog(@"resign key");
     if ([[self window] isVisible])
     {
         self.hasActivePanel = NO;
     }
 }
+
 - (void)windowDidResignMain:(NSNotification *)notification
 {
-    NSLog(@"resign main");
     
 }
+
 - (void)windowResized:(NSWindow *)aWindow
 {
     NSWindow *panel = [self window];
@@ -200,7 +199,6 @@
 
 - (void)closePanel
 {
-    NSLog(@"close planel");
     [self.window orderOut:nil];
     return;
     

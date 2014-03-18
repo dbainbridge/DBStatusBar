@@ -18,13 +18,11 @@
 
 - (BOOL)canBecomeKeyWindow;
 {
-    NSLog(@"canBecomeKeyWindow YES");
     return YES; // Allow Search field to become the first responder
 }
 
 - (void)resignKeyWindow
 {
-    NSLog(@"resignKeyWindow");
     [super resignKeyWindow];
     
 }
