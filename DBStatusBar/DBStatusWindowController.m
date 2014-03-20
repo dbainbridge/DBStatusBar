@@ -37,7 +37,7 @@
     // Make a fully skinned panel
     NSPanel *panel = (id)[self window];
     [panel setAcceptsMouseMovedEvents:YES];
-    [panel setLevel:NSPopUpMenuWindowLevel];
+    [panel setLevel:NSStatusWindowLevel];
     [panel setOpaque:NO];
     [panel setBackgroundColor:[NSColor clearColor]];
     
@@ -75,12 +75,21 @@
     self.hasActivePanel = NO;
 }
 
+- (void)windowDidBecomeKey:(NSNotification *)notification
+{
+}
+
 - (void)windowDidResignKey:(NSNotification *)notification;
 {
     if ([[self window] isVisible])
     {
         self.hasActivePanel = NO;
     }
+}
+
+- (void)windowDidResignMain:(NSNotification *)notification
+{
+    
 }
 
 - (void)windowResized:(NSWindow *)aWindow
@@ -137,7 +146,11 @@
     return statusRect;
 }
 
-- (NSTimeInterval)openPanel
+- (NSTimeInterval)openPanel {
+    return [self openPanelWithDuration:0.0];
+}
+
+- (NSTimeInterval)openPanelWithDuration:(NSTimeInterval)duration
 {
     NSWindow *panel = [self window];
     
@@ -157,7 +170,7 @@
     [panel setFrame:statusRect display:YES];
     [panel makeKeyAndOrderFront:nil];
     
-    NSTimeInterval openDuration = OPEN_DURATION;
+    NSTimeInterval openDuration = duration;
     
     NSEvent *currentEvent = [NSApp currentEvent];
     if ([currentEvent type] == NSLeftMouseDown)
@@ -186,6 +199,9 @@
 
 - (void)closePanel
 {
+    [self.window orderOut:nil];
+    return;
+    
     [NSAnimationContext beginGrouping];
     [[NSAnimationContext currentContext] setDuration:CLOSE_DURATION];
     [[[self window] animator] setAlphaValue:0];

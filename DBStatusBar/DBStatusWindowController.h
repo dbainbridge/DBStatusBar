@@ -22,6 +22,7 @@
 
 - (id)initWithDelegate:(id<PanelControllerDelegate>)delegate windowNibName:(NSString *)windowNibName;
 
+- (NSTimeInterval)openPanelWithDuration:(NSTimeInterval)duration;
 - (NSTimeInterval)openPanel;
 - (void)closePanel;
 

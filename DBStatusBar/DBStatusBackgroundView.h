@@ -1,5 +1,5 @@
-#define ARROW_WIDTH 12
-#define ARROW_HEIGHT 8
+#define ARROW_WIDTH 20
+#define ARROW_HEIGHT 10
 
 @interface DBStatusBackgroundView : NSView
 

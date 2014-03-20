@@ -150,7 +150,8 @@
 				460975B71835F823008F55C7 /* DBStatusWindowController.h */,
 				460975B81835F823008F55C7 /* DBStatusWindowController.m */,
 			);
-			path = DBStatusBar;
+			name = DBStatusBar;
+			path = ../DBStatusBar;
 			sourceTree = "<group>";
 		};
 		460975BD1835F8F6008F55C7 /* images */ = {
