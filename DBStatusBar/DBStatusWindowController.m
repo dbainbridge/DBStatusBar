@@ -42,9 +42,9 @@
     [panel setBackgroundColor:[NSColor clearColor]];
     
     // Resize panel
-    NSRect panelRect = [[self window] frame];
-    panelRect.size.height = POPUP_HEIGHT;
-    [[self window] setFrame:panelRect display:NO];
+    //NSRect panelRect = [[self window] frame];
+   // panelRect.size.height = POPUP_HEIGHT;
+    //[[self window] setFrame:panelRect display:NO];
     
 }
 
@@ -158,7 +158,7 @@
     NSRect statusRect = [self statusRectForWindow:panel];
 
     NSRect panelRect = [panel frame];
-    panelRect.size.width = PANEL_WIDTH;
+    //panelRect.size.width = PANEL_WIDTH;
     panelRect.origin.x = roundf(NSMidX(statusRect) - NSWidth(panelRect) / 2);
     panelRect.origin.y = NSMaxY(statusRect) - NSHeight(panelRect);
     
@@ -200,6 +200,7 @@
 - (void)closePanel
 {
     [self.window orderOut:nil];
+    
     return;
     
     [NSAnimationContext beginGrouping];
